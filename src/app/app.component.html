@@ -1,0 +1,75 @@
+<body>
+  <header>
+    <div class="logo">
+      <img src="assets\logo.png" alt="Heart Logo">
+    </div>
+    <h1>Heart Attack</h1>
+  </header>
+  <main>
+    <section class="form-section">
+      <h2>Ingrese sus datos</h2>
+      <form #heartAttackForm="ngForm" id="heart-attack-form" (ngSubmit)="onSubmit(heartAttackForm)">
+        <div class="form-group">
+          <label for="age">Edad:</label>
+          <input type="number" id="age" name="age" ngModel step="0.01" required>
+        </div>
+        <div class="form-group">
+          <label for="gender">Género:</label>
+          <select id="gender" name="gender" ngModel required>
+            <option value="0">Femenino</option>
+            <option value="1">Masculino</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="impulse">Frecuencia Cardiaca:</label>
+          <input type="number" id="impulse" name="impulse" ngModel step="0.0001" required>
+        </div>
+        <div class="form-group">
+          <label for="pressure_high">Presión Alta:</label>
+          <input type="number" id="pressure_high" name="pressure_high" ngModel step="0.0001" required>
+        </div>
+        <div class="form-group">
+          <label for="pressure_low">Presión Baja:</label>
+          <input type="number" id="pressure_low" name="pressure_low" ngModel step="0.0001" required>
+        </div>
+        <div class="form-group">
+          <label for="glucose">Glucosa:</label>
+          <input type="number" id="glucose" name="glucose" ngModel step="0.0001" required>
+        </div>
+        <div class="form-group">
+          <label for="kcm">CK-MB (Creatina-Cinasa)</label>
+          <input type="number" id="kcm" name="kcm" ngModel step="0.0001" required>
+        </div>
+        <div class="form-group">
+          <label for="troponin">Troponina:</label>
+          <input type="number" id="troponin" name="troponin" ngModel step="0.0001" required>
+        </div>
+        <button type="submit">Enviar</button>
+      </form>
+
+    </section>
+    <section class="result-section" id="result-section">
+      <h2>Datos ingresados</h2>
+      <div class="result-box" id="result">
+        <!-- Aquí se mostrará el resultado después de enviar el formulario -->
+      </div>
+    </section>
+    <section class="cuadrobla" id="cuadrobla">
+      <h2>Prediccion</h2>
+      <div class="cuadroazul" id="cuadroazul">
+        {{prediction}}
+      </div>
+    </section>
+    <section class="cuadrobla" id="cuadrobla">
+      <h2>Recomendacion</h2>
+      <div class="cuadroazul" id="cuadroazul">
+        {{suggestion}}
+      </div>
+    </section>
+
+
+  </main>
+  <footer>
+    <p>&copy; 2024 Detección de Ataques al Corazón. Todos los derechos reservados.</p>
+  </footer>
+</body>
